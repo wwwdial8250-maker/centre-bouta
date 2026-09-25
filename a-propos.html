@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de nous — CENTRE BOUTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #1A365D;
+            --brand-accent: #2B6CB0;
+            --brand-light: #EBF8FF;
+            --brand-red: #D32F2F;
+            --text-dark: #2D3748;
+            --text-muted: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--brand-primary);
+        }
+
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--brand-accent);
+        }
+
+        .nav-cta {
+            background-color: var(--brand-primary);
+            color: var(--white) !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--brand-accent);
+        }
+
+        /* Bannière Héro */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+            color: var(--white);
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .hero-banner p {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Conteneur Général */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Section Histoire / Vision */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .card h2 {
+            color: var(--brand-primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Section Cadre / Établissement */
+        .facility-section {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        .facility-img-container {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+        }
+
+        .facility-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .facility-content {
+            padding: 40px;
+        }
+
+        .facility-content h2 {
+            color: var(--brand-primary);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        /* Mot du Directeur */
+        .director-section {
+            background: var(--brand-light);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--brand-accent);
+        }
+
+        .director-section h2 {
+            color: var(--brand-primary);
+            margin-bottom: 15px;
+        }
+
+        .director-quote {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .director-name {
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        /* Valeurs */
+        .values-section {
+            margin-bottom: 60px;
+        }
+
+        .values-section h2 {
+            text-align: center;
+            color: var(--brand-primary);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .value-card {
+            background: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .value-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .value-card h3 {
+            color: var(--brand-red);
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        /* Section Statistiques / Chiffres Clés */
+        .stats-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-card .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--brand-red);
+            line-height: 1.2;
+        }
+
+        .stat-card .stat-label {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--brand-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .facility-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="acceuil.html#top" class="brand-logo">
+            <img src="image/logo.jpeg" alt="Logo CENTRE BOUTA" class="logo-img">
+            <div>
+                <span class="logo-text">CENTRE BOUTA</span>
+                <span class="logo-sub">Complexe Éducatif</span>
+            </div>
+        </a>
+        <nav>
+            <a href="acceuil.html">Accueil</a>
+            <a href="a-propos.html" style="color: var(--brand-accent); font-weight: 700;">À propos</a>
+            <a href="acceuil.html#presentation">Présentation</a>
+            <a href="acceuil.html#niveaux">Niveaux</a>
+            <a href="acceuil.html#tarifs">Frais de Scolarité</a>
+            <a href="acceuil.html#inscription" class="nav-cta">Demande d'Admission</a>
+        </nav>
+    </header>
+
+    <!-- Bannière d'en-tête -->
+    <section class="hero-banner">
+        <h1>À propos du CENTRE BOUTA</h1>
+        <p>Un cadre d'enseignement moderne et bienveillant dédié à la réussite de chaque élève à Centre Bouta.</p>
+    </section>
+
+    <!-- Contenu Principal -->
+    <div class="container">
+
+        <!-- Histoire et Mission -->
+        <div class="about-grid">
+            <div class="card">
+                <h2>Notre Histoire</h2>
+                <p>Implanté à Baguineda Camp, le <strong>CENTRE BOUTA</strong> a été fondé avec la volonté d'offrir une éducation de qualité accessible à tous. Au fil des années, nous avons développé des infrastructures adaptées et réuni une équipe pédagogique engagée pour accompagner nos élèves vers l'excellence.</p>
+            </div>
+            <div class="card">
+                <h2>Notre Mission</h2>
+                <p>Notre objectif principal est d'assurer un suivi personnalisé pour chaque apprenant, en favorisant non seulement l'acquisition des connaissances académiques, mais aussi l'épanouissement personnel, le civisme et la discipline.</p>
+            </div>
+        </div>
+
+        <!-- Section Cadre d'Étude & Établissement -->
+        <section class="facility-section">
+            <div class="facility-img-container">
+                <img src="image/Etablissement 2.jpeg" alt="Locaux du CENTRE BOUTA" class="facility-img">
+            </div>
+            <div class="facility-content">
+                <h2>Un Cadre d'Étude Sécurisé et Verdoyant</h2>
+                <p>Le CENTRE BOUTA dispose d'infrastructures modernes, spacieuses et bien entretenues. Nos cours intérieures aménagées avec des espaces verts offrent un environnement sain, paisible et propice à la concentration ainsi qu'à l'épanouissement des élèves.</p>
+            </div>
+        </section>
+
+        <!-- Mot de la Direction -->
+        <div class="director-section">
+            <h2>Le Mot de la Direction</h2>
+            <p class="director-quote">« Éduquer un enfant, c'est lui donner les clés pour bâtir son propre avenir et contribuer positivement à la société. Au CENTRE BOUTA, nous mettons tout en œuvre pour créer un environnement stimulant et sécurisé où chaque talent peut grandir. »</p>
+            <p class="director-name">— La Direction du CENTRE BOUTA</p>
+        </div>
+
+        <!-- Nos Valeurs Fondamentales -->
+        <section class="values-section">
+            <h2>Nos Valeurs Fondamentales</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="value-icon">🎓</span>
+                    <h3>S'instruire</h3>
+                    <p>Acquérir des connaissances et développer ses compétences pour construire son avenir.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🤍</span>
+                    <h3>Se servir</h3>
+                    <p>Mettre ses connaissances et ses talents au service des autres.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">👥</span>
+                    <h3>Pour mieux servir</h3>
+                    <p>Grandir dans la responsabilité, le respect et l'engagement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chiffres Clés -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+33</div>
+                    <div class="stat-label">Élèves</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+13</div>
+                    <div class="stat-label">Maîtres</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Années d'expérience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Engagement</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; MDT_informatique. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

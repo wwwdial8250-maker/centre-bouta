@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main # Indique la branche principale de votre dépôt Git
+
+media_folder: "image" # Dossier où les images téléversées par l'admin seront sauvegardées
+public_folder: "image"
+
+collections:
+  - name: "pages"
+    label: "Contenu des Pages"
+    files:
+      - file: "content/accueil.json"
+        label: "Page d'Accueil"
+        name: "accueil"
+        fields:
+          - { label: "Titre de la Bannière", name: "hero_title", widget: "string" }
+          - { label: "Description de la Bannière", name: "hero_desc", widget: "text" }
+          - { label: "Nombre d'Élèves (Statistique)", name: "stat_eleves", widget: "string" }
+          - { label: "Nombre de Maîtres (Statistique)", name: "stat_maitres", widget: "string" }
+          - { label: "Années d'Expérience", name: "stat_experience", widget: "string" }
+
+      - file: "content/apropos.json"
+        label: "Page À Propos"
+        name: "apropos"
+        fields:
+          - { label: "Notre Histoire", name: "histoire", widget: "text" }
+          - { label: "Notre Mission", name: "mission", widget: "text" }
+          - { label: "Mot de la Direction", name: "mot_direction", widget: "text" }

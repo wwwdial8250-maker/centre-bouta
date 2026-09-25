@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENTRE BOUTA — Complexe Éducatif d'Excellence</title>
+    
+    <!-- FAVICON (Icône de l'onglet du navigateur) -->
+    <link rel="icon" type="image/jpeg" href="image/logo.jpeg">
+    
+    <!-- OPEN GRAPH (Aperçu de l'image / logo lors du partage sur WhatsApp / réseaux sociaux) -->
+    <meta property="og:title" content="CENTRE BOUTA — Complexe Éducatif d'Excellence">
+    <meta property="og:description" content="De la Maternelle au Lycée, le CENTRE BOUTA offre un parcours académique complet, structuré et sécurisé à Baguineda Camp.">
+    <meta property="og:image" content="image/logo.jpeg">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #0F172A;
+            --brand-primary: #1E3A8A;
+            --brand-accent: #D97706;
+            --brand-success: #10B981;
+            --bg-surface: #FFFFFF;
+            --bg-subtle: #F8FAFC;
+            --border-color: #E2E8F0;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-subtle);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HEADER FIXE */
+        header {
+            background: var(--bg-surface);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-sub {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--brand-accent);
+            display: block;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--brand-primary);
+        }
+
+        .nav-cta {
+            background-color: var(--brand-primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(180deg, var(--brand-dark) 0%, #1E293B 100%);
+            color: white;
+            padding: 60px 5% 80px 5%;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.15);
+            color: var(--brand-accent);
+            border: 1px solid var(--brand-accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            color: #94A3B8;
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+        }
+
+        .stat-item h4 {
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 0.75rem;
+            color: #64748B;
+            margin: 0;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-header span {
+            color: var(--brand-accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--brand-dark);
+            font-weight: 800;
+            margin-top: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .card-feature {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 32px 24px;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.08);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #EFF6FF;
+            color: var(--brand-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .card-feature h3 {
+            font-size: 1.1rem;
+            color: var(--brand-dark);
+            margin-bottom: 10px;
+        }
+
+        .card-feature p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pricing-card.highlight {
+            border: 2px solid var(--brand-primary);
+            box-shadow: 0 20px 30px -10px rgba(30, 58, 138, 0.1);
+        }
+
+        .badge-featured {
+            position: absolute;
+            top: -14px;
+            right: 30px;
+            background: var(--brand-primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .price-title {
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            font-weight: 700;
+        }
+
+        .price-val {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            margin: 12px 0 4px 0;
+            letter-spacing: -0.03em;
+        }
+
+        .price-val span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--brand-accent);
+        }
+
+        .monthly-estimate {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: #F1F5F9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .price-inscription {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            background: #EFF6FF;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .price-list {
+            list-style: none;
+            margin: 16px 0 28px 0;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .price-list li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .price-list li::before {
+            content: "✓";
+            color: var(--brand-success);
+            font-weight: bold;
+        }
+
+        /* FORM */
+        .form-wrapper {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 580px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.03);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--bg-subtle);
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+            background: white;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--brand-primary);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #1E3A8A;
+        }
+
+        /* GEOLOCALISATION */
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.03);
+        }
+
+        .map-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .map-info h3 {
+            font-size: 1.3rem;
+            color: var(--brand-dark);
+            margin-bottom: 12px;
+        }
+
+        .map-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--brand-accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            width: fit-content;
+            transition: opacity 0.2s;
+        }
+
+        .btn-map:hover {
+            opacity: 0.9;
+        }
+
+        .map-iframe-wrapper {
+            width: 100%;
+            height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-iframe-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--brand-dark);
+            color: #94A3B8;
+            padding: 60px 5% 30px 5%;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-col p {
+            margin-bottom: 8px;
+        }
+
+        .footer-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .footer-icon {
+            width: 16px;
+            height: 16px;
+            fill: var(--brand-accent);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .footer-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            header { flex-direction: column; gap: 16px; }
+            nav { width: 100%; justify-content: center; flex-wrap: wrap; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .map-container { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body id="top">
+
+    <!-- EN-TÊTE FIXE SANS BARRE SUPÉRIEURE -->
+    <header>
+        <a href="#top" class="brand-logo">
+            <img src="image/logo.jpeg" alt="Logo CENTRE BOUTA" class="logo-img">
+            <div>
+                <span class="logo-text">CENTRE BOUTA</span>
+                <span class="logo-sub">Complexe Éducatif</span>
+            </div>
+        </a>
+        <nav>
+            <a href="#top">Accueil</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="#presentation">Présentation</a>
+            <a href="#niveaux">Niveaux</a>
+            <a href="#tarifs">Frais de Scolarité</a>
+            <a href="#localisation">Localisation</a>
+            <a href="#inscription" class="nav-cta">Demande d'Admission</a>
+        </nav>
+    </header>
+
+    <!-- HERO INSTITUTIONNEL -->
+    <div class="hero">
+        <div class="hero-container">
+            <div>
+                <span class="hero-tag">Inscriptions Ouvertes 2026-2027</span>
+                <h1>L'exigence pédagogique au service du succès de votre enfant.</h1>
+                <p>De la Maternelle au Lycée, le CENTRE BOUTA offre un parcours académique complet, structuré et sécurisé à Baguineda Camp.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>Maternelle</h4>
+                        <p>Jardin d'Enfants</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>1er Cycle</h4>
+                        <p>1ère à 6ème A.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>2ème Cycle</h4>
+                        <p>7ème à 9ème A.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Lycée</h4>
+                        <p>10ème à 12ème A.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <img src="image/Etablissement 1.jpeg" alt="Bâtiment du Centre Bouta">
+            </div>
+        </div>
+    </div>
+
+    <!-- PRÉSENTATION -->
+    <section id="presentation">
+        <div class="section-header">
+            <span>Notre Engagement</span>
+            <h2>Pourquoi faire confiance au CENTRE BOUTA ?</h2>
+        </div>
+        <div class="grid-4">
+            <div class="card-feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Sécurité & Cadre Requis</h3>
+                <p>Locaux entièrement clôturés et sécurisés, spécialement aménagés pour la protection des élèves.</p>
+            </div>
+            <div class="card-feature">
+                <div class="feature-icon">🎓</div>
+                <h3>Corps Enseignant Qualifié</h3>
+                <p>Encadrement assuré par des pédagogues expérimentés appliquant les programmes officiels.</p>
+            </div>
+            <div class="card-feature">
+                <div class="feature-icon">📖</div>
+                <h3>Rigueur Académique</h3>
+                <p>Suivi rigoureux de la Maternelle jusqu'à la préparation des examens nationaux (DEF & Baccalauréat).</p>
+            </div>
+            <div class="card-feature">
+                <div class="feature-icon">📱</div>
+                <h3>Suivi Parental Direct</h3>
+                <p>Communication constante avec l'administration et suivi régulier des résultats de l'élève.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION NIVEAUX -->
+    <section id="niveaux" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+        <div class="section-header">
+            <span>Cursus Académique</span>
+            <h2>Nos Niveaux d'Enseignement</h2>
+        </div>
+        <div class="grid-4">
+            <div class="card-feature">
+                <div class="feature-icon">👶</div>
+                <h3>Jardin d'Enfants</h3>
+                <p>Section Maternelle dédiée à l'éveil, la motricité, la sociabilisation et la préparation à la lecture/écriture.</p>
+            </div>
+            <div class="card-feature">
+                <div class="feature-icon">✏️</div>
+                <h3>1er Cycle (1ère à 6ème A.)</h3>
+                <p>Acquisition solide des bases fondamentales : lecture, écriture, calcul et découverte des sciences.</p>
+            </div>
+            <div class="card-feature">
+                <div class="feature-icon">📚</div>
+                <h3>2ème Cycle (7ème à 9ème A.)</h3>
+                <p>Enseignement fondamental approfondi orienté vers la réussite de l'examen du D.E.F.</p>
+            </div>
+            <div class="card-feature">
+                <div class="feature-icon">🏛️</div>
+                <h3>Lycée (10ème à 12ème A.)</h3>
+                <p>Enseignement secondaire général préparant méthodiquement les lycéens aux épreuves du Baccalauréat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARIFS MIS À JOUR DEPUIS LA FICHE DE RENSEIGNEMENT 2026-2027 -->
+    <section id="tarifs">
+        <div class="section-header">
+            <span>Fiche de Renseignement 2026-2027</span>
+            <h2>Barème des Frais Scolaires</h2>
+        </div>
+        <div class="pricing-grid">
+
+            <!-- MATERNELLE -->
+            <div class="pricing-card">
+                <div>
+                    <div class="price-title">Maternelle</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Jardin d'Enfants</p>
+                    
+                    <div class="price-val">160 000 FCFA <span>/ an</span></div>
+                    
+                    <div class="monthly-estimate">Soit ~17 778 FCFA / mois (sur 9 mois)</div>
+                    
+                    <div class="price-inscription">📝 Frais d'inscription : 20 000 FCFA (payables une seule fois)</div>
+
+                    <ul class="price-list">
+                        <li><strong>1ère Tranche :</strong> 70 000 FCFA (à l'inscription)</li>
+                        <li><strong>2ème Tranche :</strong> 50 000 FCFA (avant fin janvier)</li>
+                        <li><strong>3ème Tranche :</strong> 40 000 FCFA (avant fin avril)</li>
+                        <li>Carnet de vaccination requis pour la Maternelle</li>
+                    </ul>
+                </div>
+                <a href="#inscription" class="btn-submit" style="display: block; text-align: center; text-decoration: none;">Engager une Préinscription</a>
+            </div>
+
+            <!-- PREMIER CYCLE -->
+            <div class="pricing-card highlight">
+                <span class="badge-featured">Recommandé</span>
+                <div>
+                    <div class="price-title">Premier Cycle</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">1ère à la 6ème Année</p>
+                    
+                    <div class="price-val">175 000 FCFA <span>/ an</span></div>
+                    
+                    <div class="monthly-estimate">Soit ~19 444 FCFA / mois (sur 9 mois)</div>
+                    
+                    <div class="price-inscription">📝 Frais d'inscription : 20 000 FCFA (payables une seule fois)</div>
+
+                    <ul class="price-list">
+                        <li><strong>1ère Tranche :</strong> 70 000 FCFA (à l'inscription)</li>
+                        <li><strong>2ème Tranche :</strong> 60 000 FCFA (avant fin janvier)</li>
+                        <li><strong>3ème Tranche :</strong> 45 000 FCFA (avant fin avril)</li>
+                        <li>Acquisition des bases fondamentales</li>
+                    </ul>
+                </div>
+                <a href="#inscription" class="btn-submit" style="display: block; text-align: center; text-decoration: none;">Engager une Préinscription</a>
+            </div>
+
+            <!-- SECOND CYCLE -->
+            <div class="pricing-card">
+                <div>
+                    <div class="price-title">Second Cycle</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">7ème à la 9ème Année</p>
+                    
+                    <div class="price-val">190 000 FCFA <span>/ an</span></div>
+                    
+                    <div class="monthly-estimate">Soit ~21 111 FCFA / mois (sur 9 mois)</div>
+                    
+                    <div class="price-inscription">📝 Frais d'inscription : 20 000 FCFA (payables une seule fois)</div>
+
+                    <ul class="price-list">
+                        <li><strong>1ère Tranche :</strong> 80 000 FCFA (à l'inscription)</li>
+                        <li><strong>2ème Tranche :</strong> 60 000 FCFA (avant fin janvier)</li>
+                        <li><strong>3ème Tranche :</strong> 50 000 FCFA (avant fin avril)</li>
+                        <li>Préparation rigoureuse au D.E.F.</li>
+                    </ul>
+                </div>
+                <a href="#inscription" class="btn-submit" style="display: block; text-align: center; text-decoration: none;">Engager une Préinscription</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FORMULAIRE -->
+    <section id="inscription" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+        <div class="section-header">
+            <span>Admission</span>
+            <h2>Formulaire de Préinscription & Visite</h2>
+        </div>
+        <div class="form-wrapper">
+            <form id="preinscriptionForm">
+                <div class="form-group">
+                    <label for="responsable">Nom complet du Responsable Légal :</label>
+                    <input type="text" id="responsable" class="form-control" placeholder="M. / Mme Diallo" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone / WhatsApp de contact :</label>
+                    <input type="tel" id="telephone" class="form-control" placeholder="+223 65 75 42 49" required>
+                </div>
+                <div class="form-group">
+                    <label for="niveau">Niveau ou Classe Sollicitée :</label>
+                    <select id="niveau" class="form-control" required>
+                        <option value="">-- Veuillez sélectionner --</option>
+                        <optgroup label="Préscolaire">
+                            <option value="Jardin d'enfants (Maternelle)">Jardin d'enfants (Maternelle)</option>
+                        </optgroup>
+                        <optgroup label="1er Cycle Fondamental">
+                            <option value="1ère Année">1ère Année</option>
+                            <option value="2ème Année">2ème Année</option>
+                            <option value="3ème Année">3ème Année</option>
+                            <option value="4ème Année">4ème Année</option>
+                            <option value="5ème Année">5ème Année</option>
+                            <option value="6ème Année">6ème Année</option>
+                        </optgroup>
+                        <optgroup label="2ème Cycle Fondamental">
+                            <option value="7ème Année">7ème Année</option>
+                            <option value="8ème Année">8ème Année</option>
+                            <option value="9ème Année (DEF)">9ème Année (DEF)</option>
+                        </optgroup>
+                        <optgroup label="Enseignement Secondaire (Lycée)">
+                            <option value="10ème Année">10ème Année</option>
+                            <option value="11ème Année">11ème Année</option>
+                            <option value="12ème Année / Terminale (BAC)">12ème Année / Terminale (BAC)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <button type="submit" id="submitBtn" class="btn-submit">Soumettre via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECTION GÉOLOCALISATION -->
+    <section id="localisation">
+        <div class="section-header">
+            <span>Nous Trouver</span>
+            <h2>Géolocalisation & Accès</h2>
+        </div>
+        <div class="map-container">
+            <div class="map-info">
+                <h3>Centre Bouta - Baguineda</h3>
+                <p>📍 <strong>Adresse :</strong> Baguineda Camp derrière le CAP, Bamako, Mali</p>
+                <p>Nos locaux sont facilement accessibles. Rendez-nous visite pendant nos heures d'ouverture pour découvrir notre cadre pédagogique.</p>
+                <a href="https://maps.google.com/?q=Baguineda+Camp+CAP+Bamako" target="_blank" rel="noopener noreferrer" class="btn-map">
+                    🗺️ Ouvrir dans Google Maps
+                </a>
+            </div>
+            <div class="map-iframe-wrapper">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Baguineda,%20Mali&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <img src="image/logo.jpeg" alt="Logo CENTRE BOUTA" class="logo-img" style="margin-bottom: 12px;">
+                <h4 style="color: white; font-weight: 800;">CENTRE BOUTA</h4>
+                <p>Établissement privé d'enseignement général, préscolaire et secondaire d'excellence.</p>
+                <div class="footer-info-item">
+                    <svg class="footer-icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>Baguineda Camp derrière le CAP, Tel : +223 75 75 42 49 / 65 75 42 49</span>
+                </div>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <p><a href="#top" class="footer-link">Accueil</a></p>
+                <p><a href="#presentation" class="footer-link">Présentation</a></p>
+                <p><a href="#niveaux" class="footer-link">Niveaux</a></p>
+                <p><a href="#tarifs" class="footer-link">Frais de Scolarité</a></p>
+                <p><a href="#localisation" class="footer-link">Localisation</a></p>
+                <p><a href="#inscription" class="footer-link">Admission</a></p>
+            </div>
+            <div>
+                <h4>Administration</h4>
+                <p>📞 +223 65 75 42 49</p>
+                <p>📞 +223 75 75 42 49</p>
+                <p>✉️ <a href="mailto:centrebouta@gmail.com" class="footer-link">centrebouta@gmail.com</a></p>
+                <p>🕒 Lun - Ven : 08h00 - 17h00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MDT_Informatique. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT WHATSAPP -->
+    <script>
+    document.getElementById('preinscriptionForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const numeroWhatsapp = "22398351466";
+        const responsable = document.getElementById('responsable').value;
+        const telephone = document.getElementById('telephone').value;
+        const niveau = document.getElementById('niveau').value;
+
+        const message = `Bonjour CENTRE BOUTA,\n\n` +
+                        `Je souhaite effectuer une préinscription pour mon enfant.\n\n` +
+                        `*Nom du responsable :* ${responsable}\n` +
+                        `*Téléphone :* ${telephone}\n` +
+                        `*Classe demandée :* ${niveau}`;
+
+        const messageEncode = encodeURIComponent(message);
+        const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${messageEncode}`;
+
+        window.open(urlWhatsapp, '_blank');
+    });
+    </script>
+
+</body>
+</html>
